@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'figaro', '1.0'
 gem 'devise'
 gem 'faker'
 gem 'bootstrap-sass', '~> 3.1.1'
