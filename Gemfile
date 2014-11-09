@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'fog'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'redcarpet'
 gem 'pundit'
 gem 'figaro', '1.0'
