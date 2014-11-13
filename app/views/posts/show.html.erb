@@ -20,18 +20,12 @@
 <div class="row">
   <div class="col-md-8">
 
-        <%= render @comments %>
+    <h4>Comments (<%= @comments.count %> total)</h4>
+    <% if policy(Comment.new).create? %>
+      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
+    <% end %>
+    <%= render partial: 'comments/comment', collection: @comments %>
 
   </div>
 </div>
 
-<% if policy(Comment.new).create? %>
-  <div class="row">
-    <div class="col-md-8">
-      <h3>New Comment</h3>
-      
-      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
-
-    </div>
-  </div>
-<% end %>
