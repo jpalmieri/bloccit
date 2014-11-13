@@ -21,14 +21,9 @@
   <div class="col-md-8">
     <% @comments.each do |comment| %>
       <div class="media">
-        <div class="media-body">
-          <small>
-            <%= image_tag(comment.user.avatar.tiny.url) if comment.user.avatar? %>
-            submitted <%= time_ago_in_words(comment.created_at) %> ago by 
-            <%= comment.user.name %>
-          </small>
-          <p><%= comment.body %></p>
-        </div>
+
+        <%= render partial: 'comments/comment', locals: { comment: comment } %>
+
       </div>
     <% end %>
   </div>
