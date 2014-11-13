@@ -33,3 +33,12 @@
     <% end %>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-8">
+    <h3>New Comment</h3>
+    
+    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
+
+  </div>
+</div>
