@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
 
   def create
-    @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:post_id])
+    @topic = @post.topic
     @comment = current_user.comments.build(params.require(:comment).permit(:body))
     @comment.post = @post
     authorize @comment
@@ -20,8 +20,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:post_id])
+    @topic = @post.topic
     @comment = Comment.find(params[:id])
     body = @comment.body
 
