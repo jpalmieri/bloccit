@@ -1,4 +1,4 @@
-<%= form_for(:comment, as: [topic, post], url: topic_post_comments_path(topic, post), action: "create") do |f| %>
+<%= form_for(:comment, as: post, url: post_comments_path(post), action: "create") do |f| %>
   <div class="form-group">
     <%= f.text_field :body, rows: 8, class: 'form-control', placeholder: "Enter comment" %>
   </div>
