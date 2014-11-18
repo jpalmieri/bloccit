@@ -5,7 +5,7 @@ class PostPolicy < ApplicationPolicy
   end
   
   def destroy?
-    can_moderate?
+    can_moderate?(user, record)
   end
 
 end
