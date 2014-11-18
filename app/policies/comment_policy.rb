@@ -1,7 +1,7 @@
 class CommentPolicy < ApplicationPolicy
   
   def destroy?
-    can_moderate?
+    can_moderate?(user, record)
   end
   
 end
