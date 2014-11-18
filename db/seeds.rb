@@ -1,7 +1,7 @@
 require 'faker'
 
 #Create Users
-5.times do
+20.times do
   user = User.new(
     name:     Faker::Name.name,
     email:    Faker::Internet.email,
@@ -24,12 +24,15 @@ topics=Topic.all
 
 #Create Posts
 500.times do
-  Post.create!(
+  post = Post.create!(
     user:  users.sample,
     topic: topics.sample,
     title: Faker::Lorem.sentence,
     body:  Faker::Lorem.paragraph
   )
+
+  post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+  post.update_rank
 end
 posts=Post.all
 
@@ -42,10 +45,31 @@ posts=Post.all
   )
 end
 
-User.first.update_attributes!(
-  email: 'jpalmieri@gmail.com',
-  password: 'password'
+admin = User.new(
+  name: 'Joe',
+  email: 'jpalmieri@lumoslabs.com',
+  password: 'a5551212',
+  role: 'admin' 
 )
+admin.skip_confirmation!
+admin.save
+
+moderator = User.new(
+  name: 'hobojoe',
+  email: 'jpalmieri+123@lumoslabs.com',
+  password: 'a5551212',
+  role: 'moderator' 
+)
+moderator.skip_confirmation!
+moderator.save
+
+member = User.new(
+  name: 'derpadoo',
+  email: 'jpalmieri+111@lumoslabs.com',
+  password: 'a5551212',
+)
+member.skip_confirmation!
+member.save
 
 puts "Seed finished"
 puts "#{User.count} users created"
