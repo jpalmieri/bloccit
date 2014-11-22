@@ -1,4 +1,4 @@
-<div class="media">
+<%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
   <% if comment.user.avatar? %>
     <div class="pull-left" href="#">
       <%= image_tag(comment.user.avatar.small.url) %>
@@ -16,4 +16,4 @@
       </p>
     </small>
   </div>
-</div>
+<% end %>
