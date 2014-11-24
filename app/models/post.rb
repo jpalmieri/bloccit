@@ -37,4 +37,12 @@ class Post < ActiveRecord::Base
     user.votes.create(post: self, value: 1)
   end
 
+  def up_vote_link_classes(post)
+    "glyphicon glyphicon-chevron-up #{(user.voted(post) && user.voted(post).up_vote?) ? 'voted' : '' }"
+  end
+
+  def down_vote_link_classes(post)
+    "glyphicon glyphicon-chevron-down #{(user.voted(post) && user.voted(post).down_vote?) ? 'voted' : '' }"
+  end
+
 end
