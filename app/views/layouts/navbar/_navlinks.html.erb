@@ -1,0 +1,5 @@
+<ul class="nav navbar-nav">
+  <% options.each do |link_text, target| %>
+    <li class="<%= 'active' if request.path == target %>"><%= link_to link_text, target %></li>
+  <% end %>
+</ul>
