@@ -13,12 +13,9 @@
  */
 @import "bootstrap";
 
-.user-info {
-  margin-top: 9px;
-}
-
-.nav {
-  margin-top: 5px;
+.navbar-nav > li > .user-info {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .vote-arrows {
