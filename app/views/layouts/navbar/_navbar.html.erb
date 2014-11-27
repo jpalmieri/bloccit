@@ -18,10 +18,10 @@
           "Users" => users_path
         }
       } %>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right user-info">
         <% if current_user %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle user-info" data-toggle="dropdown" role="button" aria-expanded="false">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
               <%= image_tag(current_user.avatar.small.url) if current_user.avatar? %>
               <%= (current_user.name || current_user.email) %>
               <span class="caret"></span>
