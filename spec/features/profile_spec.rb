@@ -5,7 +5,7 @@ describe "Visiting profiles" do
   include TestFactories
   
   include Warden::Test::Helpers
-  Warden.test_mode!
+  before { Warden.test_mode! }
 
   before do
     @user = authenticated_user
@@ -43,5 +43,5 @@ describe "Visiting profiles" do
 
   end
 
-  Warden.test_reset!
+  after { Warden.test_reset! }
 end
