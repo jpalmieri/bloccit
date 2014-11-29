@@ -35,10 +35,13 @@
 
     <h4>Comments (<%= @comments.count %> total)</h4>
     <% if policy(Comment.new).create? %>
-      <%= render partial: 'comments/form', locals: { post: @post } %>
+      <div class="new-comment">
+        <%= render partial: 'comments/form', locals: { post: @post } %>
+      </div>
     <% end %>
-    
-    <%= render partial: 'comments/comment', collection: @comments %>
+    <div class="js-comments media">
+      <%= render partial: 'comments/comment', collection: @comments %>  
+    </div>
 
   </div>
 </div>
