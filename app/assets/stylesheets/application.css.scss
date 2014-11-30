@@ -13,9 +13,13 @@
  */
 @import "bootstrap";
 
-.navbar-nav > li > .user-info {
-  padding-top: 10px;
-  padding-bottom: 10px;
+.navbar-nav > li > .dropdown-toggle {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav > li > a > img {
+  padding-right: 10px;
 }
 
 .vote-arrows {
