@@ -13,14 +13,16 @@
  */
 @import "bootstrap";
 
-.navbar-nav > li > .dropdown-toggle {
+
+/****navbar styles****/
+#user-dropdown {
   padding-top: 0;
   padding-bottom: 0;
 }
-
-.nav > li > a > img {
+.nav-avatar {
   padding-right: 10px;
 }
+
 
 .vote-arrows {
   width: 40px;
