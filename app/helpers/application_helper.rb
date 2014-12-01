@@ -19,4 +19,8 @@ module ApplicationHelper
     redcarpet = Redcarpet::Markdown.new(renderer, extensions)
     (redcarpet.render text).html_safe
   end
+
+  def default_avatar
+    ActionController::Base.helpers.asset_path("default_avatar.png")
+  end
 end

@@ -20,3 +20,6 @@
 
 # Carrierwave image
 public/uploads
+
+# Ignore OSX metadata
+.DS_Store
